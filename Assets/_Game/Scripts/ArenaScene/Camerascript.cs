@@ -17,6 +17,7 @@ public class Camerascript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.rotation=player.transform.rotation;
         
         //animator=player.GetComponentInChildren<Animator>();
     }
@@ -41,7 +42,6 @@ public class Camerascript : MonoBehaviour
         rotationVertical -= Input.GetAxis("Mouse Y") * verticalSpeed;
 
         transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 2, player.transform.position.z);
-
 
         transform.eulerAngles = new Vector3(rotationVertical, rotationHorizontal, 0f);
         player.transform.eulerAngles = new Vector3(0, rotationHorizontal, 0);
