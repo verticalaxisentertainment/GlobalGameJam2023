@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -64,9 +65,18 @@ public class DialogueManager : MonoBehaviour
     {
         if(dialogueArrays[dialogueIndex].onEvent&&!typing)
         {
-            LevelManager.Instance.BookCam.Priority=20;
-            LevelManager.Instance.grandpaAnimation.SetInteger("AnimationState",0);
-            dialogueCanvas.SetActive(false);
+            if(SceneManager.GetActiveScene().buildIndex==0)
+            {
+                LevelManager.Instance.BookCam.Priority=20;
+                LevelManager.Instance.grandpaAnimation.SetInteger("AnimationState",0);
+                LevelManager.Instance.book.GetComponentInChildren<Animator>().SetBool("Open",true);
+                dialogueCanvas.SetActive(false);
+            }
+            else
+            {
+                dialogueCanvas.SetActive(false);
+                StartCoroutine(LevelManager.Instance.FadeOut(SceneManager.GetActiveScene().buildIndex+1));
+            }
 
         }
         

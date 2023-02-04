@@ -18,6 +18,8 @@ public class MainMenuUI : MonoBehaviour
     {
         mainMenu.SetActive(true);
         dialogueCanvas.SetActive(false);
+        LevelManager.Instance.LevelSelectCanvas.SetActive(false);
+        LevelManager.Instance.FadeoutCanvas.SetActive(false);
     }
 
     public void OnPlayClick()
