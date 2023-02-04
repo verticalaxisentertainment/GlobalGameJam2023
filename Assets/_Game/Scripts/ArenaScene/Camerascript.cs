@@ -17,7 +17,7 @@ public class Camerascript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator=GetComponentInChildren<Animator>();
+        //animator=GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -36,12 +36,12 @@ public class Camerascript : MonoBehaviour
         }
 
 
-        //transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 2, player.transform.position.z);
+        transform.position= new Vector3(player.transform.position.x,player.transform.position.y+2,player.transform.position.z);
         rotationHorizontal += Input.GetAxis("Mouse X") * horizontalSpeed;
         rotationVertical -= Input.GetAxis("Mouse Y") * verticalSpeed;
 
 
         transform.eulerAngles = new Vector3(rotationVertical, rotationHorizontal, 0f);
-        player.transform.eulerAngles = new Vector3(0f, rotationHorizontal, 0f);
+        player.transform.eulerAngles = new Vector3(0, rotationHorizontal, 0);
     }
 }

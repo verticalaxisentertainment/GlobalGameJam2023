@@ -3,7 +3,62 @@ guid: 87bfbcb7490c76947a9ddbeb101f1c7c
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: d832ae7ae1117dc4e8f13ff8f1587015, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 5d7d73d597723c946a431535689742c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: f0e6f1d327949404498ab989f229bed5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: cfdd00e9b45fe7649a5a303da89ad96c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brown
+    second: {fileID: 2100000, guid: 48fc14b75b0193442a1a1f426294622e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flame
+    second: {fileID: 2100000, guid: c19c925cde87af24bb81e6edb4911ea3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grey light
+    second: {fileID: 2100000, guid: f216ff29d24aa6c4094b532fc779fa2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal grey
+    second: {fileID: 2100000, guid: 78bbf3d1cc4eae64098bd7321869ea1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pillars grey
+    second: {fileID: 2100000, guid: a837ee40808bdc2489d0b970a5c85012, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pillars grey.001
+    second: {fileID: 2100000, guid: 667775666a554314ba534541d0e2586b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pillars grey.003
+    second: {fileID: 2100000, guid: 9c1c0443d0a7a524dbcd62ef809e5cdc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
