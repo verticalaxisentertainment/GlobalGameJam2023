@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Hand
+  - Sword
+  - Club
+  - Flower
+  - Dino
+  - Boxer
+  - Warior
   layers:
   - Default
   - TransparentFX
