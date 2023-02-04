@@ -22,7 +22,7 @@ public class EnemyScript : MonoBehaviour
         if(enemyHealth <= 0) 
         {
             //Load Victory Scene
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(3);
             Debug.Log("Enemydied Died");
 
         }
