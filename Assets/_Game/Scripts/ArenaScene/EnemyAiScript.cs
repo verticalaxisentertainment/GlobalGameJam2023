@@ -20,7 +20,7 @@ public class EnemyAiScript : MonoBehaviour
     {   
         if(isAIActive)
         {
-        navMeshAgent.destination = character.transform.position;       
+            navMeshAgent.destination = character.transform.position;       
 
         }
     }

@@ -25,7 +25,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= attackSpeed && Vector3.Distance(transform.position, EnemyScript.instance.transform.position) < 5)
+        if (timer >= attackSpeed && Vector3.Distance(transform.position, EnemyScript.instance.transform.position) < 10)
         {
             playerHealt -= EnemyScript.instance.enemyDamage;
             healtbar.fillAmount = playerHealt / 100f;

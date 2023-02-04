@@ -31,10 +31,12 @@ public class EnemyScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         enemyHealth -= PlayerScript.instance.swordStrength;
+        Debug.Log("enemyhit");
     }
     private void Awake()
     {
         instance = this;
+        EnemyTagSet();
     }
 
     private void EnemyTagSet()
