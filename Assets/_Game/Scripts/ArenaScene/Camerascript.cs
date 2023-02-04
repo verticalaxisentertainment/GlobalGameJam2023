@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Camerascript : MonoBehaviour
 {
+    public static Camerascript instance;
+
     public GameObject player;
     public Animator animator;
     public float horizontalSpeed = 1;
@@ -14,6 +16,11 @@ public class Camerascript : MonoBehaviour
 
     int i=0;
 
+
+    private void Awake()
+    {
+        instance=this;
+    }
     // Start is called before the first frame update
     void Start()
     {

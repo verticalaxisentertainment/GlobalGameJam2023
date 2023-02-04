@@ -7,13 +7,14 @@ public class EnemyScript : MonoBehaviour
 {
     public static EnemyScript instance;
     public int enemyHealth;
-    public int enemyDamage = 10;
+    public int enemyDamage;
+
+    public GameObject destroyParticle;
 
     // Start is called before the first frame update
     void Start()
     {
         EnemyTagSet();
-        
     }
 
     // Update is called once per frame
@@ -24,34 +25,46 @@ public class EnemyScript : MonoBehaviour
             //Load Victory Scene
             SceneManager.LoadScene(3);
             Debug.Log("Enemydied Died");
-
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        enemyHealth -= PlayerScript.instance.swordStrength;
-        Debug.Log("enemyhit");
+        if(collision.gameObject.CompareTag("Sword"))
+        {
+            enemyHealth -= PlayerScript.instance.swordStrength;
+            Debug.Log("enemyhit");
+        }
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            EnemyAiScript.instance.gameObject.GetComponent<Animator>().SetInteger("State",2);
+             EnemyAiScript.instance.Hit();
+        }
+
+        if(collision.gameObject.CompareTag("Box"))
+        {
+            Instantiate(destroyParticle,collision.transform.position,Quaternion.identity);
+            Destroy(collision.gameObject);
+        }
     }
     private void Awake()
     {
         instance = this;
-        EnemyTagSet();
     }
 
     private void EnemyTagSet()
     {
-        if (this.CompareTag("Dino"))
+        if (gameObject.CompareTag("Dino"))
         {
             enemyHealth = 1000000;
             enemyDamage = 1000000;
         }
-        else if (this.CompareTag("Boxer"))
+        else if (gameObject.CompareTag("Boxer"))
         {
             enemyHealth = 1000;
             enemyDamage = 1000;
         }
-        else if (this.CompareTag("Warior"))
+        else if (gameObject.CompareTag("Warior"))
         {
             enemyHealth = 100;
             enemyDamage = 5;

@@ -34,7 +34,7 @@ public class PlayerScript : MonoBehaviour
 
         if(playerHealt <= 0)
         {
-            SceneManager.LoadScene(3);
+            StartCoroutine(LevelManager.Instance.FadeOut(3));
             Debug.Log("Player Died");
         }
     }

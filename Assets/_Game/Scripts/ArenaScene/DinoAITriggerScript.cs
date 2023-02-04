@@ -18,7 +18,10 @@ public class DinoAITriggerScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        EnemyAiScript.instance.isAIActive = true;
-        Debug.Log("Triggered");
+        if(other.gameObject.CompareTag("Player"))
+        {
+            EnemyAiScript.instance.isAIActive = true;
+            EnemyAiScript.instance.gameObject.GetComponent<Animator>().SetInteger("State",1);
+        }
     }
 }
