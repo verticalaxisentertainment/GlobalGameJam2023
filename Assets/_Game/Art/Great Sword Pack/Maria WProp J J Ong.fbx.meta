@@ -6,7 +6,22 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: maria_diffuse
+    second: {fileID: 2800000, guid: 587e0b3493b871d4396952755fb55d6e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: maria_normal
+    second: {fileID: 2800000, guid: a0c81145695fd7048bd42321ebf50a02, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: maria_specular
+    second: {fileID: 2800000, guid: 7ad6e008f8425bf40bb2044b640ff2f2, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

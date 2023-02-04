@@ -5,6 +5,8 @@ using UnityEngine;
 public class Camerascript : MonoBehaviour
 {
     public GameObject player;
+    public GameObject rootCamera;
+    public GameObject Spine;
     public float horizontalSpeed = 1;
     public float verticalSpeed = 1;
 
@@ -20,13 +22,13 @@ public class Camerascript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = player.transform.position;
-
+        //transform.position = player.transform.position;
         rotationHorizontal += Input.GetAxis("Mouse X") * horizontalSpeed;
         rotationVertical -= Input.GetAxis("Mouse Y") * verticalSpeed;
 
 
-        transform.eulerAngles = new Vector3(rotationVertical, rotationHorizontal, 0f);
+        rootCamera.transform.eulerAngles = new Vector3(rotationVertical, rotationHorizontal, 0f);
+        Spine.transform.rotation=rootCamera.transform.rotation;
         player.transform.eulerAngles = new Vector3(0f, rotationHorizontal, 0f);
     }
 }
