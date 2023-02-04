@@ -21,7 +21,32 @@ ModelImporter:
   - first:
       74: 4957400053339099629
     second: arena duvar.003|arena duvar.002Action.001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brown
+    second: {fileID: 2100000, guid: 1d8d6b1842b26e54c82224992e077070, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flame
+    second: {fileID: 2100000, guid: 41b8f41382a2e4c46aa5b6221f77b377, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grey light
+    second: {fileID: 2100000, guid: 16f18e2abdc8788439987dc306286ed6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal grey
+    second: {fileID: 2100000, guid: d92652de93bc13244985e78f824ae4f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pillars grey
+    second: {fileID: 2100000, guid: e47f21fa917054149b6fb5e07476c091, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
