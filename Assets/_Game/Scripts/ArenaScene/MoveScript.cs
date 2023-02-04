@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MoveScript : MonoBehaviour
@@ -9,11 +10,13 @@ public class MoveScript : MonoBehaviour
     //public GameObject character;
     public Rigidbody characterRigidBody;
     private float speed;
+    public bool isGrounded;
 
     // Start is called before the first frame update
     void Start()
     {
         characterRigidBody = GetComponent<Rigidbody>();
+     
     }
 
     // Update is called once per frame
@@ -52,11 +55,24 @@ public class MoveScript : MonoBehaviour
         //  Now with witcchcraft i am going to translate it into worldspace
         
         Vector3 cameraRelativeMovement = forwardRelativeCamera + rightRelativeCamera;
-
-        if(Input.GetKeyDown(KeyCode.Space))
+        
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-                    characterRigidBody.AddForce(Vector3.up * jumpStrength,ForceMode.Impulse);
+            characterRigidBody.AddForce(Vector3.up * jumpStrength,ForceMode.Impulse);
+            isGrounded = false;
         }
         transform.Translate(cameraRelativeMovement, Space.World);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.transform.tag == "Ground") 
+        {
+            isGrounded = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        isGrounded = false;
     }
 }
