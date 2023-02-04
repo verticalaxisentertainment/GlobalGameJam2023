@@ -25,7 +25,7 @@ public class Camerascript : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            if(i==5)i=0;
+            if(i==3)i=0;
             i++;
             animator.SetInteger("State",i);
             animator.SetBool("Click",true);
