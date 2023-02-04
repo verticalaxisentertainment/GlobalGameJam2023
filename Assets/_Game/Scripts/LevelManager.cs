@@ -53,13 +53,13 @@ public class LevelManager : MonoBehaviour
             StartCoroutine(FadeIn());
             StartCoroutine(WarriorLevel());
         }
-        if(SceneManager.GetActiveScene().buildIndex==1)
+        if(SceneManager.GetActiveScene().buildIndex==4)
         {
             DialogueManager.Instance.dialogueCanvas.SetActive(false);
             StartCoroutine(FadeIn());
             StartCoroutine(ArenaLevel());
         }
-        if(SceneManager.GetActiveScene().buildIndex==2)
+        if(SceneManager.GetActiveScene().buildIndex==3)
         {
             DialogueManager.Instance.dialogueCanvas.SetActive(false);
             StartCoroutine(FadeIn());
