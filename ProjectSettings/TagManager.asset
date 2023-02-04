@@ -13,6 +13,7 @@ TagManager:
   - Boxer
   - Warior
   - Box
+  - Warning
   layers:
   - Default
   - TransparentFX

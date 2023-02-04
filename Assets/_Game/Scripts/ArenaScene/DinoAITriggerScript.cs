@@ -23,5 +23,9 @@ public class DinoAITriggerScript : MonoBehaviour
             EnemyAiScript.instance.isAIActive = true;
             EnemyAiScript.instance.gameObject.GetComponent<Animator>().SetInteger("State",1);
         }
+        if(gameObject.CompareTag("Warning"))
+        {
+            StartCoroutine(DialogueManager.Instance.Typing());
+        }
     }
 }

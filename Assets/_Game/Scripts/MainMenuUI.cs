@@ -28,6 +28,13 @@ public class MainMenuUI : MonoBehaviour
         dialogueCanvas.SetActive(true);
         LevelManager.Instance.grandpaAnimation.SetInteger("AnimationState",1);
 
+        if(DialogueManager.Instance.dialogueArrays[DialogueManager.Instance.dialogueIndex].grandPa)
+            LevelManager.Instance.audioSource.clip=LevelManager.Instance.grandPasounds[Random.Range(0,1)];
+        else
+            LevelManager.Instance.audioSource.clip=LevelManager.Instance.childSounds[Random.Range(0,5)];
+
+        LevelManager.Instance.audioSource.Play();
+
         StartCoroutine(DialogueManager.Instance.Typing()); 
     }
 

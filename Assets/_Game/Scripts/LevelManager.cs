@@ -15,6 +15,9 @@ public class LevelManager : MonoBehaviour
     public GameObject LevelSelectCanvas;
     public GameObject FadeoutCanvas;
     public CinemachineVirtualCamera BookCam;
+    public AudioClip[] grandPasounds,childSounds;
+    public AudioSource audioSource;
+
 
 
     public IEnumerator FadeOut(int index)
@@ -42,6 +45,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        audioSource=GetComponent<AudioSource>();
         if(SceneManager.GetActiveScene().buildIndex==1)
         {
             LevelSelectCanvas.SetActive(false);
@@ -49,8 +53,44 @@ public class LevelManager : MonoBehaviour
             StartCoroutine(FadeIn());
             StartCoroutine(WarriorLevel());
         }
+        if(SceneManager.GetActiveScene().buildIndex==1)
+        {
+            DialogueManager.Instance.dialogueCanvas.SetActive(false);
+            StartCoroutine(FadeIn());
+            StartCoroutine(ArenaLevel());
+        }
+        if(SceneManager.GetActiveScene().buildIndex==2)
+        {
+            DialogueManager.Instance.dialogueCanvas.SetActive(false);
+            StartCoroutine(FadeIn());
+            StartCoroutine(FirstDistraction());
+        }
     }
 
+    public IEnumerator FirstDistraction()
+    {
+        DialogueManager.Instance.dialogueCanvas.SetActive(true);
+        StartCoroutine(DialogueManager.Instance.Typing());
+        while(true)
+        {
+            if(DialogueManager.Instance.dialogueIndex==1)
+            {
+                grandpaAnimation.GetComponent<Animator>().SetInteger("AnimationState",3);
+                //GrandpaAnimation.Instance.Bang();
+                break;
+            }
+
+            yield return new WaitForSeconds(0.2f);
+        }
+        while(true)
+        {
+            if(DialogueManager.Instance.dialogueIndex==2)
+            {
+                grandpaAnimation.GetComponent<Animator>().SetInteger("AnimationState",1);
+            }
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
 
     public IEnumerator WarriorLevel()
     {
@@ -69,7 +109,16 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(0f);
         }
         CameraController.Instance.cameras[0].Priority=0;
+        LevelManager.Instance.audioSource.loop=true;
+        LevelManager.Instance.audioSource.Play();
         StopCoroutine(BoredLevel());
+    }
+
+    public IEnumerator ArenaLevel()
+    {
+        yield return new WaitForSeconds(1);
+        DialogueManager.Instance.dialogueCanvas.SetActive(true) ;
+        StartCoroutine(DialogueManager.Instance.Typing());
     }
 
 }

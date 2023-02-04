@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -15,11 +16,13 @@ public class DialogueManager : MonoBehaviour
     {
         public string dialogueText;
         public bool onEvent;
+        public bool grandPa;
+        public bool child;
+        public int soundIndex;
     }
 
     public int dialogueIndex;
     public DialogueArray[] dialogueArrays;
-    public string[] dialogueText;
     private TMP_Text textObject;
     private string currentString;
     public GameObject dialogueCanvas;
@@ -33,6 +36,12 @@ public class DialogueManager : MonoBehaviour
     {
         Instance = this;
     }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+            OnSkipDialogue();
+    }
     void Start()
     {
         textObject=dialogueCanvas.GetComponentInChildren<TMP_Text>();
@@ -41,6 +50,17 @@ public class DialogueManager : MonoBehaviour
     public IEnumerator Typing()
     {
         textObject.text="";
+        if(dialogueArrays[dialogueIndex].grandPa)
+        {
+            LevelManager.Instance.grandpaAnimation.SetInteger("AnimationState",1);
+            LevelManager.Instance.audioSource.clip=LevelManager.Instance.grandPasounds[dialogueArrays[dialogueIndex].soundIndex];
+        }
+        else
+        {
+            LevelManager.Instance.grandpaAnimation.SetInteger("AnimationState",0);
+            LevelManager.Instance.audioSource.clip=LevelManager.Instance.childSounds[dialogueArrays[dialogueIndex].soundIndex];
+        }
+        LevelManager.Instance.audioSource.Play();
         currentString=dialogueArrays[dialogueIndex].dialogueText;
         typing=true;
         foreach(var i in currentString) 
@@ -58,6 +78,8 @@ public class DialogueManager : MonoBehaviour
         typing=false;
         clikedwhiletyping=false;
         skipText.gameObject.SetActive(true);
+        if(!LevelManager.Instance.audioSource.loop)
+            LevelManager.Instance.audioSource.Stop();
         StopCoroutine(Typing());
     }
 
@@ -75,6 +97,7 @@ public class DialogueManager : MonoBehaviour
             else
             {
                 dialogueCanvas.SetActive(false);
+                LevelManager.Instance.audioSource.Stop();
                 StartCoroutine(LevelManager.Instance.FadeOut(SceneManager.GetActiveScene().buildIndex+1));
             }
 
@@ -85,7 +108,7 @@ public class DialogueManager : MonoBehaviour
             clikedwhiletyping=true;
         }
 
-        if(!typing)
+        if(!typing&&!dialogueArrays[dialogueIndex].onEvent)
         {
             if(dialogueIndex!=dialogueArrays.Length-1)
                 dialogueIndex++;
