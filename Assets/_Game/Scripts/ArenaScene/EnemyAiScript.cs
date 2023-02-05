@@ -34,7 +34,7 @@ public class EnemyAiScript : MonoBehaviour
 
     private IEnumerator Shakee()
     {
-        virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain=1;
+        virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain=1.5f;
         yield return new WaitForSeconds(0.2f);
         virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain=0;
         StopCoroutine(Shakee());

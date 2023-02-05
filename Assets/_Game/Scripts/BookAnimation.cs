@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class BookAnimation : MonoBehaviour
 {
     public ParticleSystem blood;
-    bool fadeout=false;
-    float alpha=0;
     public void BookOpen()
     {
        LevelManager.Instance.LevelSelectCanvas.SetActive(true);

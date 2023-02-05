@@ -1,7 +1,6 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -48,22 +47,29 @@ public class LevelManager : MonoBehaviour
         audioSource=GetComponent<AudioSource>();
         if(SceneManager.GetActiveScene().buildIndex==1)
         {
+            Cursor.visible = true;
             LevelSelectCanvas.SetActive(false);
             DialogueManager.Instance.dialogueCanvas.SetActive(false);
             StartCoroutine(FadeIn());
             StartCoroutine(WarriorLevel());
         }
-        if(SceneManager.GetActiveScene().buildIndex==4)
+        if(SceneManager.GetActiveScene().buildIndex==2)
         {
-            DialogueManager.Instance.dialogueCanvas.SetActive(false);
-            StartCoroutine(FadeIn());
-            StartCoroutine(ArenaLevel());
+            Cursor.visible = false;
         }
         if(SceneManager.GetActiveScene().buildIndex==3)
         {
+            Cursor.visible = true;
             DialogueManager.Instance.dialogueCanvas.SetActive(false);
             StartCoroutine(FadeIn());
             StartCoroutine(FirstDistraction());
+        }
+        if(SceneManager.GetActiveScene().buildIndex==4)
+        {
+            Cursor.visible = false;
+            DialogueManager.Instance.dialogueCanvas.SetActive(false);
+            StartCoroutine(FadeIn());
+            StartCoroutine(ArenaLevel());
         }
     }
 

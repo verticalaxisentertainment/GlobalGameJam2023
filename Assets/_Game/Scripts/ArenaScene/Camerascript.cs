@@ -34,13 +34,21 @@ public class Camerascript : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            if(i==3)i=0;
-            i++;
-            animator.SetInteger("State",i);
-            animator.SetBool("Click",true);
+            if(animator.gameObject.CompareTag("Boxer"))
+            {
+                animator.SetBool("Punch",true);
+            }
+            else
+            {
+                if(i==3)i=0;
+                i++;
+                animator.SetInteger("State",i);
+                animator.SetBool("Click",true);
+            }
         }
         else
         {
+            animator.SetBool("Punch",false);
             animator.SetBool("Click",false);
         }
 

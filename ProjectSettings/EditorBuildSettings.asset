@@ -20,7 +20,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/Arena.unity
     guid: edd719b22f379224ab42b1aa24286199
-  - enabled: 1
-    path: Assets/_Game/Scenes/SampleScene.unity
-    guid: 95eb12a0693d7914b9ec222697db40f8
   m_configObjects: {}

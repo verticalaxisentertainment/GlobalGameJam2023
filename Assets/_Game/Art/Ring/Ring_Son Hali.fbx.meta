@@ -3,7 +3,62 @@ guid: 0abb3db2b6973574d9afb7e9625fa915
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 8d55a467e81bb8f4cad05292866bb6ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 9f73c967a1b31f14f9263feba92370cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: b5d111a5fdbf96942acd5e995fa47821, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_beyaz
+    second: {fileID: 2100000, guid: 3540cc91506d0f4418045e9d2261cfeb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_cit
+    second: {fileID: 2100000, guid: b92a68a3a29b87941954593e33652a49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_kirmizi
+    second: {fileID: 2100000, guid: 1286670448649ae44babc17c1ff356d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_mavi
+    second: {fileID: 2100000, guid: fc749f3bc6769c04b9265699cb2c8230, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_protokol_koltugu
+    second: {fileID: 2100000, guid: 03c386b23840462429b0e07f55962159, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_seat_foots
+    second: {fileID: 2100000, guid: 69b963d19a990dd4e85098f461cbc59d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_seat_main
+    second: {fileID: 2100000, guid: 66025f7fb0b34774cb41bed53286cd72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mavi1
+    second: {fileID: 2100000, guid: c996fd5c24cae454bb53ec43707fb899, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
