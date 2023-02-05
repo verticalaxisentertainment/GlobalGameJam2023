@@ -75,6 +75,7 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator FirstDistraction()
     {
+        yield return new WaitForSeconds(1.4f);
         DialogueManager.Instance.dialogueCanvas.SetActive(true);
         StartCoroutine(DialogueManager.Instance.Typing());
         while(true)

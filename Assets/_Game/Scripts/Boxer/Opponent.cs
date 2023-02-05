@@ -15,12 +15,15 @@ public class Opponent : MonoBehaviour
     public Rigidbody[] rigidbodies;
     public Collider[] colliders;
     public GameObject healthBar;
+    public AudioSource hitSound;
 
     private TMP_Text healthText;
     private Animator animator;
 
     public NavMeshAgent navMeshAgent;
     private int i=0;
+
+    public bool punched=false;
 
 
     public IEnumerator Hit(float damage)
@@ -52,6 +55,7 @@ public class Opponent : MonoBehaviour
         navMeshAgent=GetComponent<NavMeshAgent>();
         healthText=GetComponentInChildren<TMP_Text>();
         animator=GetComponent<Animator>();
+        hitSound=GetComponent<AudioSource>();
     }
 
 
@@ -61,11 +65,16 @@ public class Opponent : MonoBehaviour
 
         healthText.text=health.ToString();
 
-        if(navMeshAgent.remainingDistance<=3.0f)
+        if(punched)
+        {
+            animator.SetInteger("Punch",2);
+            punched=false;
+        }
+        if(navMeshAgent.remainingDistance<=3.0f&&!punched)
         {
             animator.SetInteger("Punch",1);
         }
-        if(navMeshAgent.remainingDistance>3.0f)
+        if(navMeshAgent.remainingDistance>3.0f&&!punched)
         {
             animator.SetInteger("Punch",0);
         }

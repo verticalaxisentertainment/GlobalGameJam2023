@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class PuncAnimationControl : MonoBehaviour
 {
-    public Collider glove;
+    public Collider Rglove,Lglove;
 
     public void Activate(int active)
     {
         if(active==1)
         {
-            glove.enabled = true;
+            Rglove.enabled = true;
+            Lglove.enabled = true;
         }
         else
         {
-             glove.enabled = false;
+             Rglove.enabled = false;
+             Lglove.enabled = false;
         }
     }
 }

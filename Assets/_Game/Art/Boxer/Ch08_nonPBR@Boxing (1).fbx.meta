@@ -70,7 +70,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 1
         messageOptions: 0
-      - time: 0.6355062
+      - time: 0.31686214
         functionName: Activate
         data: 
         objectReferenceParameter: {instanceID: 0}
