@@ -2488,7 +2488,8 @@ MonoBehaviour:
     grandPa: 0
     child: 1
     soundIndex: 2
-  - dialogueText: "Ne ma\xE7\u0131 senin deden en iyi duelloculardan birisiydi"
+  - dialogueText: "Ne ma\xE7\u0131 senin b\xFCy\xFCk deden en iyi duelloculardan
+      birisiydi"
     onEvent: 0
     grandPa: 1
     child: 0

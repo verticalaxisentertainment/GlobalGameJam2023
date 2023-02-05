@@ -4,12 +4,16 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI.ProceduralImage;
+using Unity.VisualScripting;
+using TMPro;
 
 public class PlayerScript : MonoBehaviour
 {
     public static PlayerScript instance;
 
     public ProceduralImage healtbar;
+
+    public TMP_Text healthText;
     public int swordStrength;
     public int playerHealt = 100;
     private float timer = 0;
@@ -29,6 +33,8 @@ public class PlayerScript : MonoBehaviour
         {
             playerHealt -= EnemyScript.instance.enemyDamage;
             healtbar.fillAmount = playerHealt / 100f;
+            healthText.text=playerHealt.ToString();
+            
             timer= 0;
         }
 

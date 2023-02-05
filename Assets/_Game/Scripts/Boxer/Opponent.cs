@@ -1,17 +1,74 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI.ProceduralImage;
 
 public class Opponent : MonoBehaviour
 {
     public static Opponent Instance;
 
+    public int health=100;
+
     public Rigidbody[] rigidbodies;
     public Collider[] colliders;
+    public GameObject healthBar;
+
+    private TMP_Text healthText;
+    private Animator animator;
+
+    public NavMeshAgent navMeshAgent;
+    private int i=0;
+
+
+    public IEnumerator Hit(float damage)
+    {
+        float givenDamage=damage/100.0f;
+
+        float health=healthBar.GetComponentInChildren<ProceduralImage>().fillAmount-givenDamage;
+
+        while(true)
+        {
+            if(health<healthBar.GetComponentInChildren<ProceduralImage>().fillAmount)
+            {
+                healthBar.GetComponentInChildren<ProceduralImage>().fillAmount-=Time.deltaTime/10;
+            }
+            else
+            {
+                break;
+            }
+            yield return new WaitForSeconds(0);
+        }
+        yield return new WaitForSeconds(1);
+    }
+
+   
 
     private void Awake()
     {
         Instance = this;
+        navMeshAgent=GetComponent<NavMeshAgent>();
+        healthText=GetComponentInChildren<TMP_Text>();
+        animator=GetComponent<Animator>();
+    }
+
+
+    private void Update()
+    {
+        navMeshAgent.destination=Camerascript.instance.transform.position;
+
+        healthText.text=health.ToString();
+
+        if(navMeshAgent.remainingDistance<=3.0f)
+        {
+            animator.SetInteger("Punch",1);
+        }
+        if(navMeshAgent.remainingDistance>3.0f)
+        {
+            animator.SetInteger("Punch",0);
+        }
     }
     void Start()
     {
@@ -29,6 +86,8 @@ public class Opponent : MonoBehaviour
             cl.isTrigger=true;
         }
         colliders[0].isTrigger=false;
+        colliders[9].isTrigger=false;
+        colliders[13].isTrigger=false;
     }
 
     public void ActivateRagdoll()
@@ -49,6 +108,16 @@ public class Opponent : MonoBehaviour
         foreach (var rb in rigidbodies)
         {
             rb.AddExplosionForce(50,Glove.Instance.transform.position,15,1,ForceMode.Impulse);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            Glove.Instance.playerHealt -= EnemyScript.instance.enemyDamage;
+            Glove.Instance.healtbar.fillAmount = Glove.Instance.playerHealt / 100f;
+            healthText.text= Glove.Instance.playerHealt.ToString();
         }
     }
 }
