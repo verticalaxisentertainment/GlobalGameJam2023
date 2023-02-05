@@ -63,7 +63,6 @@ public class Opponent : MonoBehaviour
     {
         navMeshAgent.destination=Camerascript.instance.transform.position;
 
-        healthText.text=health.ToString();
 
         if(punched)
         {
