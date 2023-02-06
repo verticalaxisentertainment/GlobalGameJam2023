@@ -12,6 +12,9 @@ public class EnemyAiScript : MonoBehaviour
     public GameObject character;
     public CinemachineVirtualCamera virtualCamera;
 
+    public AudioSource audioSource;
+    public AudioClip[] audioClips;
+
     void Start()
     {
         
@@ -43,12 +46,15 @@ public class EnemyAiScript : MonoBehaviour
     public void Shake()
     {
         StartCoroutine(Shakee());
+        audioSource.clip=audioClips[0];
+        audioSource.Play();
     }
 
     public void Hit()
     {
         Debug.Log("hit");
-        PlayerScript.instance.playerHealt-=100000;
+        PlayerScript.instance.playerHealt -= 100000;
+
     }
 
 }

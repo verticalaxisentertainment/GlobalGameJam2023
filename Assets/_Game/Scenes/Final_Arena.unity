@@ -10649,6 +10649,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 51c8fec9bec0c524485a74a17630af77, type: 3}
   - {fileID: 8300000, guid: ff2185af81c176e489573c64ba5fd9c1, type: 3}
   audioSource: {fileID: 0}
+  flower: {fileID: 0}
+  sword: {fileID: 0}
+  showerParticleEffect: {fileID: 0}
+  collectableSword: {fileID: 0}
+  move: 0
 --- !u!4 &318086817
 Transform:
   m_ObjectHideFlags: 0
@@ -13952,6 +13957,8 @@ MonoBehaviour:
   animator: {fileID: 863362319}
   horizontalSpeed: 1
   verticalSpeed: 1
+  rigidbody: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!114 &400945873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41787,6 +41794,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 51c8fec9bec0c524485a74a17630af77, type: 3}
   - {fileID: 8300000, guid: ff2185af81c176e489573c64ba5fd9c1, type: 3}
   audioSource: {fileID: 0}
+  flower: {fileID: 0}
+  sword: {fileID: 0}
+  showerParticleEffect: {fileID: 0}
+  collectableSword: {fileID: 0}
+  move: 0
 --- !u!4 &1285346383
 Transform:
   m_ObjectHideFlags: 0
@@ -48712,6 +48724,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   horizontalSpeed: 1
   verticalSpeed: 1
+  rigidbody: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!114 &1493171721
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -58,28 +58,9 @@ public class Opponent : MonoBehaviour
         hitSound=GetComponent<AudioSource>();
     }
 
-
-    private void Update()
-    {
-        navMeshAgent.destination=Camerascript.instance.transform.position;
-
-
-        if(punched)
-        {
-            animator.SetInteger("Punch",2);
-            punched=false;
-        }
-        if(navMeshAgent.remainingDistance<=3.0f&&!punched)
-        {
-            animator.SetInteger("Punch",1);
-        }
-        if(navMeshAgent.remainingDistance>3.0f&&!punched)
-        {
-            animator.SetInteger("Punch",0);
-        }
-    }
     void Start()
     {
+
         rigidbodies=GetComponentsInChildren<Rigidbody>();
         colliders=GetComponentsInChildren<Collider>();
 
@@ -96,6 +77,27 @@ public class Opponent : MonoBehaviour
         colliders[0].isTrigger=false;
         colliders[9].isTrigger=false;
         colliders[13].isTrigger=false;
+    }
+
+    private void Update()
+    {
+        navMeshAgent.destination=Camerascript.instance.transform.position;
+
+        healthText.text=health.ToString();
+
+        if(punched)
+        {
+            animator.SetInteger("Punch",2);
+            punched=false;
+        }
+        if(navMeshAgent.remainingDistance<=3.0f&&!punched)
+        {
+            animator.SetInteger("Punch",1);
+        }
+        if(navMeshAgent.remainingDistance>3.0f&&!punched)
+        {
+            animator.SetInteger("Punch",0);
+        }
     }
 
     public void ActivateRagdoll()
@@ -125,7 +127,7 @@ public class Opponent : MonoBehaviour
         {
             Glove.Instance.playerHealt -= EnemyScript.instance.enemyDamage;
             Glove.Instance.healtbar.fillAmount = Glove.Instance.playerHealt / 100f;
-            healthText.text= Glove.Instance.playerHealt.ToString();
+            //healthText.text= Glove.Instance.playerHealt.ToString();
         }
     }
 }

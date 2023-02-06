@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class MoveScript : MonoBehaviour
 {
+    public static MoveScript Instance;
+
+
     public float moveSpeed;
     public float jumpStrength;
     //public GameObject character;
@@ -12,14 +15,19 @@ public class MoveScript : MonoBehaviour
     private float speed;
     public bool isGrounded;
 
-    // Start is called before the first frame update
+    private bool canTakeSword=false;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         characterRigidBody = GetComponent<Rigidbody>();
      
     }
 
-    // Update is called once per frame
     void Update()
     {
         MovePlayerRelativeToCamera();
@@ -28,6 +36,15 @@ public class MoveScript : MonoBehaviour
 
     void MovePlayerRelativeToCamera()
     {
+        if(Input.GetKeyDown(KeyCode.E)&&canTakeSword) 
+        {
+            LevelManager.Instance.collectableSword.SetActive(false);
+            DialogueManager.Instance.dialogueCanvas.SetActive(false);
+            LevelManager.Instance.sword.SetActive(true);
+            LevelManager.Instance.audioSource.enabled=false;
+            GetComponent<AudioSource>().Play();
+        }
+
         //  Player Input;
         if(Input.GetKey(KeyCode.LeftShift)||Input.GetKey(KeyCode.RightShift)) 
         {
@@ -37,8 +54,14 @@ public class MoveScript : MonoBehaviour
         {
             speed = moveSpeed;
         }
-        float playerVerticalInput = Input.GetAxis("Vertical") * speed *Time.deltaTime;
-        float playerHorizontalInput = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        float playerVerticalInput=0;
+        float playerHorizontalInput =0;
+
+        if(LevelManager.Instance.move)
+        {
+            playerVerticalInput = Input.GetAxis("Vertical") * speed *Time.deltaTime;
+            playerHorizontalInput = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        }
 
         //   Get camera relative directions
 
@@ -71,8 +94,22 @@ public class MoveScript : MonoBehaviour
             isGrounded = true;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.other.gameObject.CompareTag("Respawn"))
+        {
+            canTakeSword= true;
+            DialogueManager.Instance.skipText.enabled=true;
+        }
+    }
     private void OnCollisionExit(Collision collision)
     {
+        if(collision.other.gameObject.CompareTag("Respawn"))
+        {
+            canTakeSword= false;
+            DialogueManager.Instance.skipText.enabled=false;
+        }
         isGrounded = false;
     }
 }

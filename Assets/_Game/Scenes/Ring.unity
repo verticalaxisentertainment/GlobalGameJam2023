@@ -3509,6 +3509,7 @@ MonoBehaviour:
   rigidbodies: []
   colliders: []
   healthBar: {fileID: 1634051649}
+  hitSound: {fileID: 0}
   navMeshAgent: {fileID: 0}
   punched: 0
 --- !u!195 &919132147885062384

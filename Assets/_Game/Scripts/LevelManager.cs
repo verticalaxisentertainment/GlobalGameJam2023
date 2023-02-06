@@ -17,7 +17,8 @@ public class LevelManager : MonoBehaviour
     public AudioClip[] grandPasounds,childSounds;
     public AudioSource audioSource;
 
-
+    public GameObject flower,sword,showerParticleEffect,collectableSword;
+    public bool move=false;
 
     public IEnumerator FadeOut(int index)
     {
@@ -67,9 +68,21 @@ public class LevelManager : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex==4)
         {
             Cursor.visible = false;
+            PlayerScript.instance.healtbar.GetComponentInParent<Canvas>().gameObject.SetActive(false);
             DialogueManager.Instance.dialogueCanvas.SetActive(false);
+            flower.SetActive(false);
+            sword.SetActive(false);
+            collectableSword.SetActive(false);
             StartCoroutine(FadeIn());
             StartCoroutine(ArenaLevel());
+        }
+        if(SceneManager.GetActiveScene().buildIndex==5)
+        {
+            Cursor.visible = true;
+            LevelSelectCanvas.SetActive(false);
+            DialogueManager.Instance.dialogueCanvas.SetActive(false);
+            StartCoroutine(FadeIn());
+            StartCoroutine(AfterDinasour());
         }
     }
 
@@ -124,7 +137,43 @@ public class LevelManager : MonoBehaviour
     public IEnumerator ArenaLevel()
     {
         yield return new WaitForSeconds(1);
-        DialogueManager.Instance.dialogueCanvas.SetActive(true) ;
+        DialogueManager.Instance.dialogueCanvas.SetActive(true);
+        StartCoroutine(DialogueManager.Instance.Typing());
+
+        while(true)
+        {
+            if(DialogueManager.Instance.dialogueIndex==3)
+            {
+                Instantiate(showerParticleEffect,flower.transform.position,Quaternion.identity);
+                yield return new WaitForSeconds(0.1f);
+                flower.SetActive(true);
+                break;
+            }
+            yield return new WaitForSeconds(0);
+        }
+        while(true)
+        {
+            if(DialogueManager.Instance.dialogueIndex==5)
+            {
+                DialogueManager.Instance.skipText.enabled=false;
+                flower.SetActive(false);
+                Instantiate(showerParticleEffect,collectableSword.transform.position,Quaternion.identity);
+                yield return new WaitForSeconds(0.1f);
+                collectableSword.SetActive(true);
+                move=true;
+                //sword.SetActive(true);
+                break;
+            }
+            yield return new WaitForSeconds(0);
+        }
+
+        StopCoroutine(ArenaLevel());
+    }
+
+    public IEnumerator AfterDinasour()
+    {
+        yield return new WaitForSeconds(1);
+        DialogueManager.Instance.dialogueCanvas.SetActive(true);
         StartCoroutine(DialogueManager.Instance.Typing());
     }
 

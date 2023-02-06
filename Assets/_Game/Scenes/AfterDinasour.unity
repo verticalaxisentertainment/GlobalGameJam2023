@@ -2920,27 +2920,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueIndex: 0
   dialogueArrays:
-  - dialogueText: "Demek b\xFCy\xFCk b\xFCy\xFCk baban S\xF6r Erdal Acar Demir'in
-      maceralar\u0131n\u0131 dinlemek istiyorsun"
+  - dialogueText: "Ama maalesef bu hikaye biraz farkl\u0131"
     onEvent: 0
     grandPa: 1
     child: 0
     soundIndex: 0
-  - dialogueText: "S\xF6r Erdal Acar Demir korkusuz bir d\xF6v\xFC\u015F\xE7\xFCyd\xFC"
-    onEvent: 0
-    grandPa: 1
-    child: 0
-    soundIndex: 1
-  - dialogueText: "Kar\u015F\u0131s\u0131na \xE7\u0131kan herkesi alt ederdi"
+  - dialogueText: "O zamanlar Kral II Koray \u0130nci buyuk solenler verirdi."
     onEvent: 0
     grandPa: 1
     child: 0
     soundIndex: 0
-  - dialogueText: ????
+  - dialogueText: Solenlerde korumasi Yenilmez Savasci Egecan cinara duello yapip
+      kazananlara san sohret ve para bagislardi.
     onEvent: 1
     grandPa: 1
     child: 0
-    soundIndex: 0
+    soundIndex: 1
   dialogueCanvas: {fileID: 2022784535}
   skipText: {fileID: 1414626525}
 --- !u!114 &1399678572
@@ -2963,7 +2958,13 @@ MonoBehaviour:
   grandPasounds:
   - {fileID: 8300000, guid: 11d4e1e4c15cc06429135de5f2b715f4, type: 3}
   - {fileID: 8300000, guid: f3da7844bb38a384384ef293bc0fa1f9, type: 3}
-  childSounds: []
+  childSounds:
+  - {fileID: 8300000, guid: 76ab9c2252767f04a98577d0a99289d2, type: 3}
+  - {fileID: 8300000, guid: 41f055d71d9d0684295011e8818aa050, type: 3}
+  - {fileID: 8300000, guid: 1274f84b509488841bcdd6b0953ce983, type: 3}
+  - {fileID: 8300000, guid: 7714300af1280e7439023562c6e863f1, type: 3}
+  - {fileID: 8300000, guid: 51c8fec9bec0c524485a74a17630af77, type: 3}
+  - {fileID: 8300000, guid: ff2185af81c176e489573c64ba5fd9c1, type: 3}
   audioSource: {fileID: 0}
   flower: {fileID: 0}
   sword: {fileID: 0}

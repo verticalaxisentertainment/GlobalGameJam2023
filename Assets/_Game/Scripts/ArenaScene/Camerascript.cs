@@ -14,22 +14,23 @@ public class Camerascript : MonoBehaviour
     private float rotationHorizontal = 0;
     private float rotationVertical = 0;
 
+    public Rigidbody rigidbody;
+    public Collider collider;
+
     int i=0;
 
 
-    private void Awake()
-    {
-        instance=this;
-    }
-    // Start is called before the first frame update
     void Start()
     {
         transform.rotation=player.transform.rotation;
         
-        //animator=player.GetComponentInChildren<Animator>();
+        rigidbody=GetComponent<Rigidbody>();
+        collider= GetComponent<Collider>();
+
+        rigidbody.isKinematic= true;
+        collider.isTrigger=true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetMouseButtonDown(0))

@@ -19,6 +19,8 @@ public class PlayerScript : MonoBehaviour
     private float timer = 0;
     public float attackSpeed = 5;
 
+    private bool test=true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +40,19 @@ public class PlayerScript : MonoBehaviour
             timer= 0;
         }
 
-        if(playerHealt <= 0)
+        if(playerHealt <= 0&&test)
         {
-            StartCoroutine(LevelManager.Instance.FadeOut(3));
-            Debug.Log("Player Died");
+           StartCoroutine(NextScene());
+           test=false;
         }
+    }
+
+    private IEnumerator NextScene()
+    {
+        GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(LevelManager.Instance.FadeOut(3));
+        
     }
 
     //private void OnCollisionEnter(Collision collision)

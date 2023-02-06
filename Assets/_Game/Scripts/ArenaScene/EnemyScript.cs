@@ -38,12 +38,14 @@ public class EnemyScript : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             EnemyAiScript.instance.gameObject.GetComponent<Animator>().SetInteger("State",2);
-             EnemyAiScript.instance.Hit();
+            EnemyAiScript.instance.Hit();
         }
 
         if(collision.gameObject.CompareTag("Box"))
         {
             Instantiate(destroyParticle,collision.transform.position,Quaternion.identity);
+            EnemyAiScript.instance.audioSource.clip=EnemyAiScript.instance.audioClips[1];
+            EnemyAiScript.instance.audioSource.Play();
             Destroy(collision.gameObject);
         }
     }
