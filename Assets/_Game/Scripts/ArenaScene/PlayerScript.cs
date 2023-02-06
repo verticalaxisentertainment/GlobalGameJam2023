@@ -51,7 +51,7 @@ public class PlayerScript : MonoBehaviour
     {
         GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(0.5f);
-        StartCoroutine(LevelManager.Instance.FadeOut(3));
+        StartCoroutine(LevelManager.Instance.FadeOut(SceneManager.GetActiveScene().buildIndex+1));
         
     }
 

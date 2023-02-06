@@ -14,8 +14,6 @@ public class Camerascript : MonoBehaviour
     private float rotationHorizontal = 0;
     private float rotationVertical = 0;
 
-    public Rigidbody rigidbody;
-    public Collider collider;
 
     int i=0;
 
@@ -23,12 +21,6 @@ public class Camerascript : MonoBehaviour
     void Start()
     {
         transform.rotation=player.transform.rotation;
-        
-        rigidbody=GetComponent<Rigidbody>();
-        collider= GetComponent<Collider>();
-
-        rigidbody.isKinematic= true;
-        collider.isTrigger=true;
     }
 
     void Update()

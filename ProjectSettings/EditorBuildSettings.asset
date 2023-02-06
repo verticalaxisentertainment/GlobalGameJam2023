@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/AfterDinasour.unity
     guid: 2d0b4c9a60b18e4468ee4260bce03c37
+  - enabled: 1
+    path: Assets/_Game/Scenes/Final_Arena.unity
+    guid: a5287137ccfb5c740935e167e011863a
+  - enabled: 1
+    path: Assets/_Game/Scenes/Final.unity
+    guid: 4677fcdc1ccf8aa45b3ced951b09099e
   m_configObjects: {}

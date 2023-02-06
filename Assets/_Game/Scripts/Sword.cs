@@ -14,6 +14,11 @@ public class Sword : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         isGameOver = true;
-        Debug.Log("Selama");
+
+        if(collision.gameObject.CompareTag("Opponent"))
+        {
+            Debug.Log("Vurdu");
+            Gladiator.Instance.health-=10;
+        }
     }
 }

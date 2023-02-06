@@ -15,6 +15,7 @@ public class Opponent : MonoBehaviour
     public Rigidbody[] rigidbodies;
     public Collider[] colliders;
     public GameObject healthBar;
+    public GameObject Player;
     public AudioSource hitSound;
 
     private TMP_Text healthText;
@@ -81,7 +82,7 @@ public class Opponent : MonoBehaviour
 
     private void Update()
     {
-        navMeshAgent.destination=Camerascript.instance.transform.position;
+        navMeshAgent.destination=Player.transform.position;
 
         healthText.text=health.ToString();
 

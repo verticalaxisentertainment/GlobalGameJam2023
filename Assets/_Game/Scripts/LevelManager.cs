@@ -57,6 +57,7 @@ public class LevelManager : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex==2)
         {
             Cursor.visible = false;
+            move=true;
         }
         if(SceneManager.GetActiveScene().buildIndex==3)
         {
@@ -83,6 +84,19 @@ public class LevelManager : MonoBehaviour
             DialogueManager.Instance.dialogueCanvas.SetActive(false);
             StartCoroutine(FadeIn());
             StartCoroutine(AfterDinasour());
+        }
+        if(SceneManager.GetActiveScene().buildIndex==6)
+        {
+            move=true;
+            Cursor.visible=false;
+        }
+        if(SceneManager.GetActiveScene().buildIndex==7)
+        {
+            Cursor.visible = true;
+            LevelSelectCanvas.SetActive(false);
+            DialogueManager.Instance.dialogueCanvas.SetActive(false);
+            StartCoroutine(FadeIn());
+            StartCoroutine(Final());
         }
     }
 
@@ -175,6 +189,35 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         DialogueManager.Instance.dialogueCanvas.SetActive(true);
         StartCoroutine(DialogueManager.Instance.Typing());
+    }
+
+    private bool last=false;
+     public IEnumerator Final()
+    {
+        yield return new WaitForSeconds(1);
+        DialogueManager.Instance.dialogueCanvas.SetActive(true);
+        StartCoroutine(DialogueManager.Instance.Typing());
+
+        while(true)
+        {
+            if(DialogueManager.Instance.dialogueIndex== 5)
+            {
+                last=true;
+                break;
+            }
+            yield return new WaitForSeconds(0);
+        }
+
+        
+    }
+
+    private void Update()
+    {
+        if((Input.GetKeyDown(KeyCode.E)||Input.GetMouseButtonDown(0))&&last)
+        {
+            DialogueManager.Instance.dialogueCanvas.SetActive(false);
+            StartCoroutine(LevelManager.Instance.FadeOut(0));
+        }
     }
 
 }

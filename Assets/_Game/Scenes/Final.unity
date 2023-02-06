@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 1526f6f2208f227489bbcab38fb7f9eb, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: effb3bd3b96826c45b44b2d1154600d7, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -2920,22 +2920,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueIndex: 0
   dialogueArrays:
-  - dialogueText: "Ama maalesef bu hikaye biraz farkl\u0131"
+  - dialogueText: "Vaaay demek ki kazand\u0131. \xD6dul olarak ne alm\u0131\u015F
+      peki"
+    onEvent: 0
+    grandPa: 0
+    child: 1
+    soundIndex: 3
+  - dialogueText: "Kral\u0131n hizmetine girme \u015Fans\u0131"
     onEvent: 0
     grandPa: 1
     child: 0
     soundIndex: 0
-  - dialogueText: "O zamanlar Kral II Koray \u0130nci buyuk solenler verirdi."
+  - dialogueText: "Uzun y\u0131llar kral\u0131n yan\u0131nda sava\u015Flara kat\u0131larak
+      para ve \u015Fohret kazand\u0131"
     onEvent: 0
-    grandPa: 1
-    child: 0
-    soundIndex: 0
-  - dialogueText: Solenlerde korumasi Yenilmez Savasci Egecan cinara duello yapip
-      kazananlara san sohret ve para bagislardi.
-    onEvent: 1
     grandPa: 1
     child: 0
     soundIndex: 1
+  - dialogueText: "Kazandi\u011Fi paralar ile uzak bir yere bir ev yapt\u0131 e\u015Fini
+      dostunu oraya getirtti."
+    onEvent: 0
+    grandPa: 1
+    child: 0
+    soundIndex: 0
+  - dialogueText: "O yerin ilk yap\u0131lan evi bu evdi yavrum"
+    onEvent: 0
+    grandPa: 1
+    child: 0
+    soundIndex: 1
+  - dialogueText: "Bu k\xF6y\xFCn kurulup bu hallere gelmesinin en b\xFCy\xFCk sebebi
+      senin b\xFCy\xFCk b\xFCy\xFCk b\xFCy\xFCk baban S\xF6r Erdal Acar Demir' dir."
+    onEvent: 0
+    grandPa: 1
+    child: 0
+    soundIndex: 0
   dialogueCanvas: {fileID: 2022784535}
   skipText: {fileID: 1414626525}
 --- !u!114 &1399678572
