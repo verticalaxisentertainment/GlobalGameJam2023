@@ -715,6 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1456,7 +1457,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &596394621
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1473,7 +1474,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &596394622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3a734db7e4c3eb74784dfee73db62517, type: 3}
@@ -2343,7 +2344,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1078464039
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2360,7 +2361,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &1078464040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2922,25 +2923,49 @@ MonoBehaviour:
   dialogueArrays:
   - dialogueText: "Demek b\xFCy\xFCk b\xFCy\xFCk baban S\xF6r Erdal Acar Demir'in
       maceralar\u0131n\u0131 dinlemek istiyorsun"
-    onEvent: 0
+    onEvent: 1
     grandPa: 1
     child: 0
     soundIndex: 0
+    _event:
+      m_PersistentCalls:
+        m_Calls: []
   - dialogueText: "S\xF6r Erdal Acar Demir korkusuz bir d\xF6v\xFC\u015F\xE7\xFCyd\xFC"
     onEvent: 0
     grandPa: 1
     child: 0
     soundIndex: 1
+    _event:
+      m_PersistentCalls:
+        m_Calls: []
   - dialogueText: "Kar\u015F\u0131s\u0131na \xE7\u0131kan herkesi alt ederdi"
     onEvent: 0
     grandPa: 1
     child: 0
     soundIndex: 0
+    _event:
+      m_PersistentCalls:
+        m_Calls: []
   - dialogueText: ????
     onEvent: 1
     grandPa: 1
     child: 0
     soundIndex: 0
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1399678572}
+          m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+          m_MethodName: NextScene
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   dialogueCanvas: {fileID: 2022784535}
   skipText: {fileID: 1414626525}
 --- !u!114 &1399678572
@@ -2965,6 +2990,21 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f3da7844bb38a384384ef293bc0fa1f9, type: 3}
   childSounds: []
   audioSource: {fileID: 0}
+  StartEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1399678572}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   flower: {fileID: 0}
   sword: {fileID: 0}
   showerParticleEffect: {fileID: 0}
@@ -3939,7 +3979,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1890100939
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3956,7 +3996,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &1903151091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8583,7 +8623,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8804437395941922029
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -8600,7 +8640,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &8804437395941922030
 MonoBehaviour:
   m_ObjectHideFlags: 0

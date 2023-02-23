@@ -33,4 +33,9 @@ public class GrandpaAnimation : MonoBehaviour
         Instantiate(bangParticle,hand.transform);
         StartCoroutine(BangwithTime());
     }
+
+    public void SetAnimaton(int state)
+    {
+        gameObject.GetComponent<Animator>().SetInteger("AnimationState", state);
+    }
 }

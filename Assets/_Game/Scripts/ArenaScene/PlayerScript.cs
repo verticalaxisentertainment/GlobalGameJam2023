@@ -35,10 +35,10 @@ public class PlayerScript : MonoBehaviour
         {
             playerHealt -= EnemyScript.instance.enemyDamage;
             healtbar.fillAmount = playerHealt / 100f;
-            healthText.text=playerHealt.ToString();
             
             timer= 0;
         }
+           healthText.text = playerHealt.ToString();
 
         if(playerHealt <= 0&&test)
         {

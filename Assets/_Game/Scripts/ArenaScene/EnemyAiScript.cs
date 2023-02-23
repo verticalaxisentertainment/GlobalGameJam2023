@@ -12,7 +12,7 @@ public class EnemyAiScript : MonoBehaviour
     public GameObject character;
     public CinemachineVirtualCamera virtualCamera;
 
-    public AudioSource audioSource;
+    public AudioSource[] audioSource;
     public AudioClip[] audioClips;
 
     void Start()
@@ -46,8 +46,8 @@ public class EnemyAiScript : MonoBehaviour
     public void Shake()
     {
         StartCoroutine(Shakee());
-        audioSource.clip=audioClips[0];
-        audioSource.Play();
+        audioSource[0].clip=audioClips[0];
+        audioSource[0].Play();
     }
 
     public void Hit()

@@ -573,6 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1302,7 +1303,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &596394621
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1319,7 +1320,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &596394622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3a734db7e4c3eb74784dfee73db62517, type: 3}
@@ -1408,7 +1409,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 599598793}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399678569}
+        m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
+        m_MethodName: OnClickExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &599598793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2866,26 +2879,53 @@ MonoBehaviour:
     grandPa: 0
     child: 1
     soundIndex: 0
+    _event:
+      m_PersistentCalls:
+        m_Calls: []
   - dialogueText: "Nas\u0131l bir hikaye istersin evlad\u0131m"
     onEvent: 0
     grandPa: 1
     child: 0
     soundIndex: 0
+    _event:
+      m_PersistentCalls:
+        m_Calls: []
   - dialogueText: "Bilmem ki, g\xFCzel olsun yeter"
     onEvent: 0
     grandPa: 0
     child: 1
     soundIndex: 3
+    _event:
+      m_PersistentCalls:
+        m_Calls: []
   - dialogueText: "Bu kitap k\xF6kenlerimizin maceralar\u0131n\u0131 anlat\u0131yor"
     onEvent: 0
     grandPa: 1
     child: 0
     soundIndex: 1
+    _event:
+      m_PersistentCalls:
+        m_Calls: []
   - dialogueText: "Istedi\u011Fin hikayeyi se\xE7 ve sana zevkle anlatay\u0131m"
     onEvent: 1
     grandPa: 1
     child: 0
     soundIndex: 0
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1399678572}
+          m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+          m_MethodName: StartStoryTelling
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   dialogueCanvas: {fileID: 2022784535}
   skipText: {fileID: 1414626525}
 --- !u!114 &1399678572
@@ -2923,6 +2963,7 @@ MonoBehaviour:
   showerParticleEffect: {fileID: 0}
   collectableSword: {fileID: 0}
   move: 0
+  canTakeSword: 0
 --- !u!82 &1399678573
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8718,7 +8759,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8804437395941922029
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -8735,7 +8776,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &8804437395941922030
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void OnClickExit()
     {
-        Application.Quit(1);
+        Application.Quit();
     }
 
 }

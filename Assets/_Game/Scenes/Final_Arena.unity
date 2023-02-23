@@ -5163,7 +5163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7838125071117149390, guid: 540c00b02f9dd6e4383216b706523b45, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7838125071117149391, guid: 540c00b02f9dd6e4383216b706523b45, type: 3}
       propertyPath: m_RootOrder
@@ -10596,6 +10596,7 @@ MonoBehaviour:
   showerParticleEffect: {fileID: 0}
   collectableSword: {fileID: 0}
   move: 0
+  canTakeSword: 0
 --- !u!4 &318086817
 Transform:
   m_ObjectHideFlags: 0
@@ -30051,7 +30052,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &863362319
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -30068,7 +30069,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &863362320
 Transform:
   m_ObjectHideFlags: 0
@@ -41731,6 +41732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -41807,6 +41809,7 @@ MonoBehaviour:
   showerParticleEffect: {fileID: 0}
   collectableSword: {fileID: 0}
   move: 0
+  canTakeSword: 0
 --- !u!4 &1285346383
 Transform:
   m_ObjectHideFlags: 0
@@ -41841,12 +41844,18 @@ MonoBehaviour:
     grandPa: 1
     child: 0
     soundIndex: 1
+    _event:
+      m_PersistentCalls:
+        m_Calls: []
   - dialogueText: "Kar\u015F\u0131s\u0131na her ne engel \xE7\u0131karsa \xE7\u0131ks\u0131n
       y\u0131lmazd\u0131"
     onEvent: 0
     grandPa: 0
     child: 1
     soundIndex: 1
+    _event:
+      m_PersistentCalls:
+        m_Calls: []
   dialogueCanvas: {fileID: 1045100437}
   skipText: {fileID: 53856388}
 --- !u!82 &1285346385
@@ -59213,7 +59222,7 @@ NavMeshAgent:
   m_ObstacleAvoidanceType: 4
 --- !u!95 &1818255885
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -59237,7 +59246,7 @@ Animator:
     'WeaponAttack'\n\tFrom animation clip 'jumpingAttackOnGround'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1820350771
 GameObject:
   m_ObjectHideFlags: 0
@@ -85135,6 +85144,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maria_sword
       objectReference: {fileID: 0}
+    - target: {fileID: 6865990952748708540, guid: 5b646db5193f0f040a54234ad0d258c7, type: 3}
+      propertyPath: healtbar
+      value: 
+      objectReference: {fileID: 1005770081}
+    - target: {fileID: 6865990952748708540, guid: 5b646db5193f0f040a54234ad0d258c7, type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 1096294113}
     - target: {fileID: 6865990952748708542, guid: 5b646db5193f0f040a54234ad0d258c7, type: 3}
       propertyPath: m_IsTrigger
       value: 1

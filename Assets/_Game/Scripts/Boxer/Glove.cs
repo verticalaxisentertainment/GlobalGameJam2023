@@ -10,7 +10,6 @@ public class Glove : MonoBehaviour
     public static Glove Instance;
 
     public GameObject hitParticle;
-    bool pass=true;
 
 
     public int playerHealt = 100;
@@ -52,19 +51,9 @@ public class Glove : MonoBehaviour
             if(Opponent.Instance.health<=0)
             {
                 Opponent.Instance.navMeshAgent.Stop();
-                StartCoroutine(NextScene());
                 Opponent.Instance.ActivateRagdoll();
+                StartCoroutine(LevelManager.Instance.NextSceneE(2f));
             }
         }
     }
-
-    
-
-    private IEnumerator NextScene()
-    {
-        yield return new WaitForSeconds(2f);
-        StartCoroutine(LevelManager.Instance.FadeOut(SceneManager.GetActiveScene().buildIndex+1));
-    }
-
-    
 }

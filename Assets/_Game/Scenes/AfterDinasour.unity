@@ -715,6 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1456,7 +1457,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &596394621
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1473,7 +1474,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &596394622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3a734db7e4c3eb74784dfee73db62517, type: 3}
@@ -2343,7 +2344,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1078464039
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2360,7 +2361,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &1078464040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2925,17 +2926,38 @@ MonoBehaviour:
     grandPa: 1
     child: 0
     soundIndex: 0
+    _event:
+      m_PersistentCalls:
+        m_Calls: []
   - dialogueText: "O zamanlar Kral II Koray \u0130nci buyuk solenler verirdi."
     onEvent: 0
     grandPa: 1
     child: 0
     soundIndex: 0
+    _event:
+      m_PersistentCalls:
+        m_Calls: []
   - dialogueText: Solenlerde korumasi Yenilmez Savasci Egecan cinara duello yapip
       kazananlara san sohret ve para bagislardi.
     onEvent: 1
     grandPa: 1
     child: 0
     soundIndex: 1
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1399678572}
+          m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+          m_MethodName: NextScene
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   dialogueCanvas: {fileID: 2022784535}
   skipText: {fileID: 1414626525}
 --- !u!114 &1399678572
@@ -2971,6 +2993,7 @@ MonoBehaviour:
   showerParticleEffect: {fileID: 0}
   collectableSword: {fileID: 0}
   move: 0
+  canTakeSword: 0
 --- !u!82 &1399678573
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3940,7 +3963,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1890100939
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3957,7 +3980,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &1903151091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8584,7 +8607,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8804437395941922029
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -8601,7 +8624,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &8804437395941922030
 MonoBehaviour:
   m_ObjectHideFlags: 0

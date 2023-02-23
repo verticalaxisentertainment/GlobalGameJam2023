@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 1
+    value: 0
   shutterAngle:
     overrideState: 1
     value: 270
@@ -43,10 +43,10 @@ MonoBehaviour:
     value: 25
   threshold:
     overrideState: 1
-    value: 1
+    value: 1.11
   softKnee:
     overrideState: 1
-    value: 0.5
+    value: 0.425
   clamp:
     overrideState: 1
     value: 65472
@@ -64,11 +64,11 @@ MonoBehaviour:
     value: 0
   dirtTexture:
     overrideState: 1
-    value: {fileID: 0}
+    value: {fileID: 2800000, guid: 520b919af3afcc643b5d707d95558218, type: 3}
     defaultState: 1
   dirtIntensity:
     overrideState: 1
-    value: 0
+    value: 11.78
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

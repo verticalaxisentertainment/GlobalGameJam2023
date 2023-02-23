@@ -15,7 +15,6 @@ public class MoveScript : MonoBehaviour
     private float speed;
     public bool isGrounded;
 
-    private bool canTakeSword=false;
 
     private void Awake()
     {
@@ -36,15 +35,6 @@ public class MoveScript : MonoBehaviour
 
     void MovePlayerRelativeToCamera()
     {
-        if(Input.GetKeyDown(KeyCode.E)&&canTakeSword) 
-        {
-            LevelManager.Instance.collectableSword.SetActive(false);
-            DialogueManager.Instance.dialogueCanvas.SetActive(false);
-            LevelManager.Instance.sword.SetActive(true);
-            LevelManager.Instance.audioSource.enabled=false;
-            GetComponent<AudioSource>().Play();
-        }
-
         //  Player Input;
         if(Input.GetKey(KeyCode.LeftShift)||Input.GetKey(KeyCode.RightShift)) 
         {
@@ -99,7 +89,7 @@ public class MoveScript : MonoBehaviour
     {
         if(collision.other.gameObject.CompareTag("Respawn"))
         {
-            canTakeSword= true;
+            LevelManager.Instance.canTakeSword= true;
             DialogueManager.Instance.skipText.enabled=true;
         }
     }
@@ -107,7 +97,7 @@ public class MoveScript : MonoBehaviour
     {
         if(collision.other.gameObject.CompareTag("Respawn"))
         {
-            canTakeSword= false;
+            LevelManager.Instance.canTakeSword= false;
             DialogueManager.Instance.skipText.enabled=false;
         }
         isGrounded = false;

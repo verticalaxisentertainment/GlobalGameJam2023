@@ -44,8 +44,8 @@ public class EnemyScript : MonoBehaviour
         if(collision.gameObject.CompareTag("Box"))
         {
             Instantiate(destroyParticle,collision.transform.position,Quaternion.identity);
-            EnemyAiScript.instance.audioSource.clip=EnemyAiScript.instance.audioClips[1];
-            EnemyAiScript.instance.audioSource.Play();
+            EnemyAiScript.instance.audioSource[1].clip=EnemyAiScript.instance.audioClips[1];
+            EnemyAiScript.instance.audioSource[1].Play();
             Destroy(collision.gameObject);
         }
     }
